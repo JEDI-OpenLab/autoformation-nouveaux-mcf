@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La Rentrée dont vous êtes le héros | JEDI-OpenLab</title>
+    <meta
+      name="description"
+      content="Module d'autoformation narratif en cours de construction pour accompagner les nouveaux maîtres de conférences dans leur prise de fonction pédagogique."
+    >
+    <meta property="og:title" content="La Rentrée dont vous êtes le héros | JEDI-OpenLab">
+    <meta
+      property="og:description"
+      content="Un livre dont vous êtes le héros pour explorer les choix pédagogiques de la prise de fonction des nouveaux maîtres de conférences."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JEDI-OpenLab">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --brand-primary: #436692;
+        --brand-secondary: #84a3b1;
+        --brand-coral: #d07857;
+        --brand-amber: #edb349;
+        --brand-ink: #163042;
+        --brand-paper: #f6f3ee;
+        --brand-white: #ffffff;
+        --surface-soft: rgba(255, 255, 255, 0.84);
+        --surface-strong: rgba(255, 255, 255, 0.96);
+        --shadow-card: 0 18px 42px rgba(22, 48, 66, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--brand-ink);
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #fcfaf8 0%, var(--brand-paper) 100%);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .topbar {
+        background: linear-gradient(135deg, #274463 0%, #436692 35%, #84a3b1 68%, #edb349 100%);
+        box-shadow: 0 10px 30px rgba(22, 48, 66, 0.2);
+      }
+
+      .topbar-inner {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--brand-white);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+        object-fit: cover;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.96);
+        padding: 2px;
+        box-shadow: 0 8px 18px rgba(22, 48, 66, 0.18);
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 0.96rem;
+        line-height: 1.15;
+      }
+
+      .brand span {
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        opacity: 0.9;
+        text-transform: uppercase;
+      }
+
+      .status-pill {
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        color: var(--brand-white);
+        background: linear-gradient(135deg, #163042 0%, #436692 46%, #84a3b1 78%, #edb349 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: clamp(92px, 14vw, 150px) 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        font-family: "Fraunces", Georgia, serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 880px;
+        margin: 22px 0 0;
+        font-size: clamp(3rem, 8vw, 5.8rem);
+        line-height: 0.96;
+      }
+
+      .lead {
+        max-width: 700px;
+        margin: 26px 0 0;
+        font-size: clamp(1.05rem, 2vw, 1.22rem);
+        line-height: 1.72;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 38px 0 48px;
+      }
+
+      .notice-card {
+        border: 1px solid rgba(67, 102, 146, 0.14);
+        border-radius: 22px;
+        background: var(--surface-strong);
+        box-shadow: var(--shadow-card);
+      }
+
+      .notice-card-body {
+        padding: 24px;
+      }
+
+      .notice-card h2 {
+        margin: 0 0 10px;
+        color: var(--brand-primary);
+        font-size: 1.55rem;
+      }
+
+      .notice-card p {
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      .footer {
+        border-top: 1px solid rgba(67, 102, 146, 0.14);
+        background: rgba(255, 255, 255, 0.62);
+      }
+
+      .footer-inner {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        color: rgba(22, 48, 66, 0.74);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        .topbar-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero-inner {
+          padding-top: 56px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar" aria-label="En-tête JEDI-OpenLab">
+        <div class="topbar-inner">
+          <a class="brand" href="../jedi-main/index.html" aria-label="Retour à JEDI-OpenLab">
+            <img src="../jedi-main/PIX/jedi-openlab.png" alt="">
+            <span>
+              <strong>JEDI-OpenLab</strong>
+              <span>Jean pour l'Éducation, le Design et l'Innovation</span>
+            </span>
+          </a>
+          <span class="status-pill">En construction</span>
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">La Rentrée dont vous êtes le héros</p>
+            <h1 id="page-title">Module en cours de conception</h1>
+            <p class="lead">
+              Ce futur module d'autoformation prendra la forme d'un livre dont vous êtes le héros,
+              destiné aux nouveaux maîtres de conférences.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main>
+        <article class="notice-card">
+          <div class="notice-card-body">
+            <h2>Page provisoire</h2>
+            <p>Les contenus du module ne sont pas encore publiés.</p>
+          </div>
+        </article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
+          <span>La Rentrée dont vous êtes le héros</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
